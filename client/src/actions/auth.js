@@ -35,8 +35,8 @@ export const loadUser = () => async dispatch => {
 }
 
 // Register user
-export const register = ({ name, email, password }) => {
-    config = {
+export const register = ({ name, email, password }) => async dispatch => {
+    const config = {
         headers: {
             "Content_Type" : 'application/json'
         }
@@ -67,7 +67,7 @@ export const register = ({ name, email, password }) => {
 
 // Login user
 export const login = (email, password) => async dispatch => {
-    config = {
+    const config = {
         headers: {
             "Content_Type" : 'application/json'
         }
@@ -83,7 +83,7 @@ export const login = (email, password) => async dispatch => {
         })
         dispatch(loadUser());
     } catch (error) {
-        const errors = err.response.data.errors;
+        const errors = error.response.data.errors;
 
         if (errors) {
             errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
