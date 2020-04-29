@@ -11,8 +11,6 @@ import {
   CLEAR_PROFILE,
 } from "./types";
 import setAuthToken from '../utils/setAuthToken'
-import { set } from "mongoose";
-
 
 //load user
 export const loadUser = () => async dispatch => {

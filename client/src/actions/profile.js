@@ -9,7 +9,7 @@ import {
   ACCOUNT_DELETED,
   GET_REPOS,
 } from "./types";
-import { profile_url } from "gravatar";
+
 
 // get current user profile
 export const getCurrentProfile = () => async (dispatch) => {

@@ -5,6 +5,7 @@ import NotFound from '../layout/NotFound'
 import PrivateRoute from './PrivateRoute'
 import Login from '../auth/Login'
 import Register from '../auth/Register'
+import Dashboard from '../dashboard/Dashboard'
 
 const Routes = () => {
     return (
@@ -13,6 +14,7 @@ const Routes = () => {
             <Switch>
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/login' component={Login} />
+                <PrivateRoute exact path='/dashboard' component={Dashboard} />
                 <Route component={NotFound} />
             </Switch>
         </section>
