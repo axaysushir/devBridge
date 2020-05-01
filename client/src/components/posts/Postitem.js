@@ -26,8 +26,8 @@ const PostItem = ({
         Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
       </p>
 
-      {showActions &
-        7(
+      {showActions &&
+        (
           <Fragment>
             <button
               onClick={() => addLike(_id)}
@@ -76,3 +76,7 @@ PostItem.propTypes = {
 const mapStateToProps = state => ({
     auth: state.auth
 })
+
+export default connect(
+    mapStateToProps, {addLike, removeLike, deletePost}
+)(PostItem);

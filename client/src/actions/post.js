@@ -20,7 +20,7 @@ export const getPosts = () => async (dispatch) => {
       type: GET_POSTS,
       payload: res.data,
     });
-  } catch (errpr) {
+  } catch (error) {
     dispatch({
       type: POST_ERROR,
       payload: {

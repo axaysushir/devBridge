@@ -36,7 +36,7 @@ export const loadUser = () => async dispatch => {
 export const register = ({ name, email, password }) => async dispatch => {
     const config = {
         headers: {
-            "Content_Type" : 'application/json'
+            'Content-Type': 'application/json'
         }
     }
 
@@ -67,7 +67,7 @@ export const register = ({ name, email, password }) => async dispatch => {
 export const login = (email, password) => async dispatch => {
     const config = {
         headers: {
-            "Content_Type" : 'application/json'
+           'Content-Type': 'application/json'
         }
     }
     const body = JSON.stringify({ email, password })
@@ -98,3 +98,10 @@ export const logout = () => dispatch => {
     dispatch({ type: CLEAR_PROFILE });
     dispatch({ type: LOGOUT })
 }
+
+//Array.protoType.unique
+// var data = ['apple', 'bag', 'apple']
+// function removeDuplicate(data) {
+//     return [...new Set(data)]
+// }
+// console.log(removeDuplicate(data))

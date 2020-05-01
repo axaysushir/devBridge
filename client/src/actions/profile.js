@@ -23,7 +23,7 @@ export const getCurrentProfile = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reposnse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
@@ -42,7 +42,7 @@ export const getProfiles = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reposnse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
@@ -59,7 +59,7 @@ export const getProfileById = (userId) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reposnse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
@@ -76,7 +76,7 @@ export const getGithubRepos = (username) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reposnse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
@@ -104,7 +104,7 @@ export const createProfile = (formData, history, edit = false) => async (
       history.push("/dashboard");
     }
   } catch (error) {
-    const errors = error.reponse.data.errors;
+    const errors = error.response.data.errors;
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
@@ -112,7 +112,7 @@ export const createProfile = (formData, history, edit = false) => async (
 
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reposnse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
@@ -137,7 +137,7 @@ export const addExperience = (formData, history) => async (dispatch) => {
 
     history.push("/dashboard");
   } catch (error) {
-    const errors = error.reponse.data.error;
+    const errors = error.response.data.error;
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
@@ -145,13 +145,13 @@ export const addExperience = (formData, history) => async (dispatch) => {
 
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reponse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
 
 // Add education
-export const addEduction = (formData, history) => async (dispatch) => {
+export const addEducation = (formData, history) => async (dispatch) => {
   try {
     const config = {
       headers: {
@@ -168,7 +168,7 @@ export const addEduction = (formData, history) => async (dispatch) => {
     dispatch(setAlert("Education Added", "success"));
     history.push("/dashboard");
   } catch (error) {
-    const errors = error.reponse.data.error;
+    const errors = error.response.data.error;
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
@@ -176,7 +176,7 @@ export const addEduction = (formData, history) => async (dispatch) => {
 
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reponse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
@@ -195,7 +195,7 @@ export const deleteExperience = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reponse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
@@ -214,7 +214,7 @@ export const deleteEducation = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.reponse.statusText, status: error.reponse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };
@@ -233,8 +233,8 @@ export const deleteAccount = () => async (dispatch) => {
       dispatch({
         type: PROFILE_ERROR,
         payload: {
-          msg: error.reponse.statusText,
-          status: error.reponse.status,
+          msg: error.response.statusText,
+          status: error.response.status,
         },
       });
     }
