@@ -139,7 +139,7 @@ const CreateProfile = ({
           </small>
         </div>
         <div className="form-group">
-          <textarea name="bio" value={bio} onChange={(e) => onChange(e)} />
+          <textarea placeholder='A short bio of yourself' name="bio" value={bio} onChange={(e) => onChange(e)} />
           <small className="form-text">Tell us a little about your self</small>
         </div>
 
@@ -205,12 +205,12 @@ const CreateProfile = ({
                 onChange={(e) => onChange(e)}
               />
             </div>
-            <input type="submit" className="btn btn-primary" my-1 />
+          </Fragment>
+        )}
+        <input type="submit" className="btn btn-primary my-1" />
             <Link className="btn btn-light my-1" to="/dashboard">
               Go Back
             </Link>
-          </Fragment>
-        )}
       </form>
     </Fragment>
   );

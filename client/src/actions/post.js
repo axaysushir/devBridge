@@ -43,7 +43,7 @@ export const addLike = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: error.response.statusText, status: error.reponse.status },
+      payload: { msg: error.response.statusText, status: error.response.status },
     });
   }
 };

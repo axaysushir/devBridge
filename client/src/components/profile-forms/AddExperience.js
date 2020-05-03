@@ -30,7 +30,7 @@ const AddExperience = ({ addExperience, history }) => {
       <small>* = required field</small>
       <form
         className="form"
-        onsubmit={(e) => {
+        onSubmit={(e) => {
           e.preventDefault();
           addExperience(formData, history);
         }}
