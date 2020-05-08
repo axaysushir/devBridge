@@ -77,7 +77,7 @@ router.post(
     if (status) profileFields.status = status;
     if (githubusername) profileFields.githubusername = githubusername;
     if (skills) {
-      profileFields.skills = skills.split(',')
+      profileFields.skills = skills.split(',');
       profileFields.skills.map(skill => skill.trim())
     }
 
@@ -365,10 +365,7 @@ router.delete("/education/:edu_id", auth, async (req, res) => {
       console.log("typeof eduIds", typeof eduIds);
       console.log("req.params", req.params);
       console.log("removed", eduIds.indexOf(req.params.edu_id));
- */ foundProfile.education.splice(
-        removeIndex,
-        1,
-      );
+ */  foundProfile.education.splice(removeIndex, 1);
       await foundProfile.save();
       return res.status(200).json(foundProfile);
     }
@@ -395,7 +392,7 @@ router.get('/github/:username', (req, res) => {
     request(options, (error, response, body) => {
       if (error) console.error(error);
 
-      if (response.statusCode !== 200) {
+      if (response.statusCode != 200) {
         return res.status(404).json({ msg: 'No Github profile found' });
       }
 
