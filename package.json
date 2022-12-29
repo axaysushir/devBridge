@@ -19,7 +19,7 @@
     "express-validator": "^6.14.2",
     "gravatar": "^1.8.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.7",
+    "mongoose": "^5.13.15",
     "redux-devtools-extension": "^2.13.8",
     "request": "^2.88.2"
   },
